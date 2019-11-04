@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="300001" android:versionName="1.0" package="com.companyname.landmarks" android:installLocation="auto">
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme" android:name="android.support.multidex.MultiDexApplication" android:debuggable="true">
+    <activity android:label="Atrakcija" android:name="md5fbfa158f134da6531f06df10c95c8299.Atrakcija" />
+    <activity android:label="Atrakcije" android:name="md5fbfa158f134da6531f06df10c95c8299.Atrakcije" />
+    <activity android:label="@string/app_name" android:theme="@style/AppTheme" android:name="md5fbfa158f134da6531f06df10c95c8299.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:label="menu" android:name="md5fbfa158f134da6531f06df10c95c8299.menu" />
+    <activity android:label="qrCamera" android:name="md5fbfa158f134da6531f06df10c95c8299.qrCamera" />
+    <service android:name="md5dcb6eccdc824e0677ffae8ccdde42930.KeepAliveService" />
+    <receiver android:enabled="true" android:exported="false" android:label="Essentials Battery Broadcast Receiver" android:name="md5d630c3d3bfb5f5558520331566132d97.BatteryBroadcastReceiver" />
+    <receiver android:enabled="true" android:exported="false" android:label="Essentials Energy Saver Broadcast Receiver" android:name="md5d630c3d3bfb5f5558520331566132d97.EnergySaverBroadcastReceiver" />
+    <receiver android:enabled="true" android:exported="false" android:label="Essentials Connectivity Broadcast Receiver" android:name="md5d630c3d3bfb5f5558520331566132d97.ConnectivityBroadcastReceiver" />
+    <provider android:authorities="com.companyname.landmarks.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="xamarin.essentials.fileProvider">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/xamarin_essentials_fileprovider_file_paths" />
+    </provider>
+    <provider android:name="mono.android.MultiDexLoader" android:exported="false" android:initOrder="1999999999" android:authorities="com.companyname.landmarks.mono.android.MultiDexLoader.__mono_init__" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="1999999998" android:authorities="com.companyname.landmarks.mono.MonoRuntimeProvider.__mono_init__" />
+    <!--suppress ExportedReceiver-->
+    <receiver android:name="mono.android.Seppuku">
+      <intent-filter>
+        <action android:name="mono.android.intent.action.SEPPUKU" />
+        <category android:name="mono.android.intent.category.SEPPUKU.com.companyname.landmarks" />
+      </intent-filter>
+    </receiver>
+    <activity android:name="com.karumi.dexter.DexterActivity" android:theme="@style/Dexter.Internal.Theme.Transparent" />
+  </application>
+</manifest>
